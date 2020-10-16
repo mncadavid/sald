@@ -6,7 +6,10 @@ const Header = (props) => {
     return(
         <header>
           <h1>SALD</h1>
-          <Link to="/login">Login</Link>
+          {props.loggedIn ?
+            <button onClick={props.logout}>Logout</button>
+            : <Link to="/login">Login</Link>
+          }
         </header>
     )
 };
